@@ -7,6 +7,13 @@ import java.util.Scanner;
 //        カレーは最初の在庫は10皿
 //        カレーの在庫は全支店で共有する。
 //        支店を入力するとカレーを販売し在庫を減らす。
+/**
+ *
+ *"在庫数" @param currey_stock
+ *"大阪店" @param A
+ *"名古屋店" @param B
+ *"北海道店" @param C
+ */
 public class kadai301_03 {
     Integer currey_stock = 10;
     String A = "大阪店";
@@ -28,6 +35,10 @@ public class kadai301_03 {
             }
         }
     }
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         kadai301_03 store = new kadai301_03();
         store.buy_currey();

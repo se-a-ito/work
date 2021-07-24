@@ -9,6 +9,13 @@
 //        牛クラスの振る舞いは以下とする。
 //
 //        話す(名前、年齢、性別、体重を出力する)
+/**
+ *
+ *"牛の名前" @param name
+ *"歳" @param age
+ *"性別" @param gender
+ *"体重" @param weight
+ */
 public class Kadai301_02 {
     String name;
     Integer age;
@@ -29,6 +36,10 @@ public class Kadai301_02 {
         System.out.println(this.name + "\t" + this.age + "歳" + "\t" + sex + "\t" + this.weight  + "kg");
     }
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         Kadai301_02  kadai =  new Kadai301_02();
         kadai.mow("はなこ",3,false,100.4);
