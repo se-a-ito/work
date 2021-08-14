@@ -7,7 +7,7 @@
  * 各フィールドの初期値はインスタンス化するときに設定する
  */
 public class Human {
-    private String person_name;
+    private String personName;
     private Double weight;
 
     /**
@@ -16,12 +16,12 @@ public class Human {
      * @param weight 人の体重
      */
     public Human(String name, Double weight) {
-        this.person_name = name;
+        this.personName = name;
         this.weight = weight;
     }
 
     public String getName() {
-        return this.person_name;
+        return this.personName;
     }
 
     public Double getWeight() {
