@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+<script th:src="@{/js/list2.js}"></script>
+
+<meta charset="UTF-8">
+<title>list</title>
+</head>
+<body>
+<table class="table table-striped container">
+      <thead th:with="fruits=果物,comment=コメント">
+        <tr>
+          <th th:text="${#strings.toUpperCase('#')}"></th>
+          <th th:text="${fruits}"></th>
+          <th th:text="${comment}"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="element, elementStat : ${text}" class="align-middle">
+          <td th:text="${elementStat.index + 1}"></td>
+          <td th:text="${element.getFruits()}"></td>
+          <td th:text="${element.getMemo()}"></td>
+        </tr>
+      </tbody>
+</table>
+    <div class="row">
+      <div class="col-md-3 offset-md-7">
+        <form action="/list2"th:action="@{/list2}" method="get">
+          <div class="input-group">
+            <input type="text" name="keyword" class="form-control" placeholder="あいまい検索" />
+            <span class="input-group-btn">
+              <input class="btn btn-dark mr-5" type="submit" value="検索" />
+              <input class="btn btn-dark mr-5" type="button" id="reset" value="reset" />
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+</body>
+</html>
