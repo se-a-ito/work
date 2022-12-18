@@ -13,8 +13,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import com.example.demo.Memolist;
 @Controller
 public class ListController3 {
 
@@ -28,7 +26,7 @@ public class ListController3 {
             String line;
             while ((line = br.readLine()) != null) {
             String[] data = line.split(",");
-            fruits.add(new Memolist(data[0], data[1]));
+//            fruits.add(new Memolist(data[0], data[1], data[2]));
             }
     		model.addAttribute("text", fruits);
             br.close();

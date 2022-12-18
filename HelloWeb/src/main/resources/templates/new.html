@@ -9,22 +9,14 @@
 <body>
 	<div class="container">
 		<h2>登録処理画面</h2>
-		<form method="post" action="/fruits">
-			<div class="form-group">
-				<label for="No">No:</label> <input type="tel" name="No" required
-					class="form-control">
-			</div>
-			<div class="form-group">
-				<label for="fruits">fruits:</label> <input type="text" required
-					name="fruits" class="form-control">
-			</div>
-			<div class="form-group">
-				<label for="memo">memo:</label>
-				<textarea name="memo" class="form-control"></textarea>
-			</div>
-			<div class="form-group">
-				<input type="submit" value="登録">
-			</div>
+		<form method="post" th:action="@{/fruits}" th:object="${memo}">
+			<div class="form-group"><label for="number">No:</label> <input type="number" name="number" class="form-control" th:field="*{number}"></div>
+			<div th:if="${#fields.hasErrors('number')}" th:errors="*{number}">number Error</div>
+			<div class="form-group"><label for="fruits">fruits:</label> <input type="text" name="fruits" class="form-control" th:field="*{fruits}"></div>
+			<div th:if="${#fields.hasErrors('fruits')}" th:errors="*{fruits}">fruits Error</div>
+			<div class="form-group"><label for="memo">memo:</label><textarea name="memo" class="form-control" th:field="*{memo}"></textarea></div>
+			<div th:if="${#fields.hasErrors('memo')}" th:errors="*{memo}">memo Error</div>
+			<div class="form-group"><input type="submit" value="登録"></div>
 		</form>
 	</div>
 </body>

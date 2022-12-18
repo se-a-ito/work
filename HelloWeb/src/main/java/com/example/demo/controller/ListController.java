@@ -8,14 +8,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.example.demo.Memolist;
+import com.example.demo.Memo;
 
 @Controller
 public class ListController {
 
-	Memolist list1 = new Memolist("メロン","高いよ");
-	Memolist list2 = new Memolist("リンゴ","おいしいよ");
-	Memolist list3 = new Memolist("マスカット","つぶつぶです");
+	Memo list1 = new Memo(1,"メロン","高いよ");
+	Memo list2 = new Memo(2,"リンゴ","おいしいよ");
+	Memo list3 = new Memo(3,"マスカット","つぶつぶです");
 
 	@GetMapping("/list")
 	public String list(Model model) {

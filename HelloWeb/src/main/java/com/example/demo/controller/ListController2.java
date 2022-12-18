@@ -9,7 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.demo.Memolist;
+import com.example.demo.Memo;
 
 @Controller
 public class ListController2 {
@@ -17,13 +17,13 @@ public class ListController2 {
 
 	@RequestMapping("list2")
 	public String list(Model model, @RequestParam(value = "keyword", required = false) String keyword) {
-		Memolist[] list = {
-				new Memolist("メロン","高いよ"),
-				new Memolist("リンゴ","おいしいよ"),
-				new Memolist("マスカット","つぶつぶです")
+		Memo[] list = {
+				new Memo(1,"メロン","高いよ"),
+				new Memo(2,"リンゴ","おいしいよ"),
+				new Memo(3,"マスカット","つぶつぶです")
 		};
 		List<Object> text = new ArrayList<Object>();
-		for(Memolist lists: list) {
+		for(Memo lists: list) {
 			if(keyword == null) {
 				text.add(lists);
 			} else if(lists.getFruits().contains(keyword) || lists.getMemo().contains(keyword)) {

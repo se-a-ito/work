@@ -19,9 +19,10 @@
       </thead>
       <tbody>
         <tr th:each="element, elementStat : ${text}" class="align-middle">
-          <td th:text="${elementStat.index + 1}"></td>
-          <td th:text="${element.getFruits()}"></td>
-          <td th:text="${element.getMemo()}"></td>
+          <!--<td th:text="${element.number}"></td> -->
+          <td><a th:text="${element.number}" th:href="@{'/fruits/'} + ${element.number} + '/update'"></a></td>
+          <td th:text="${element.fruits}"></td>
+          <td th:text="${element.memo}"></td>
         </tr>
       </tbody>
 </table>
@@ -30,12 +31,11 @@
         <form action="/fruits"th:action="@{/fruits}" method="get">
           <div class="input-group justify-content-end">
             <span class="input-group-btn">
-            	<a href="fruits/new" class="btn btn-dark">登録画面</a>
+            	<a href="/new" class="btn btn-dark">登録画面</a>
             </span>
           </div>
         </form>
       </div>
     </div>
-    <p></p>
 </body>
 </html>
